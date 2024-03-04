@@ -9,10 +9,12 @@ const counterSlice = createSlice({
     initialState,
     reducers: {
          increment: (state) => {
-state.count += 1;
+state.count -= 1;
          },
          decrement: () => {
 
          }
     }
 })
+
+export default counterSlice.reducer;
