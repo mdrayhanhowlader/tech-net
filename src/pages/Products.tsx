@@ -19,7 +19,7 @@ export default function Products() {
     dispatch(setPriceRange(value[0]));
   };
 
-  const newData = data?.data;
+  
 
   let productsData;
 
@@ -32,16 +32,16 @@ export default function Products() {
   }
 
   if (status) {
-    productsData = newData?.filter(
+    productsData = data?.data?.filter(
       (item: { status: boolean; price: number }) =>
         item.status === true && item.price < priceRange
     );
   } else if (priceRange > 0) {
-    productsData = newData?.filter(
+    productsData = data?.data?.filter(
       (item: { price: number }) => item.price < priceRange
     );
   } else {
-    productsData = newData;
+    productsData = data?.data;
   }
 
   return (
@@ -61,8 +61,8 @@ export default function Products() {
           <h1 className="text-2xl uppercase">Price Range</h1>
           <div className="max-w-xl">
             <Slider
-              defaultValue={[9999999]}
-              max={999999}
+              defaultValue={[150]}
+              max={150}
               min={0}
               step={1}
               onValueChange={(value) => handleSlider(value)}
