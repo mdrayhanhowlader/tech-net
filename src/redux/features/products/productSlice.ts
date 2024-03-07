@@ -7,7 +7,7 @@ interface IProduct {
 
 const initialState : IProduct = {
     status: false,
-    priceRange: 150
+    priceRange: 99999
     
 }
 
