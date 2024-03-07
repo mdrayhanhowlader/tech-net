@@ -22,7 +22,7 @@ export default function ProductDetails() {
           <h1 className="text-3xl font-semibold">{product?.name}</h1>
           <p className="text-xl">Rating: {product?.rating}</p>
           <ul className="space-y-1 text-lg">
-            {product?.features?.map((feature: string) => (
+            {product?.keyFeature?.map((feature: string) => (
               <li key={feature}>{feature}</li>
             ))}
           </ul>
