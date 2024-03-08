@@ -8,9 +8,7 @@ import { useParams } from 'react-router-dom';
 export default function ProductDetails() {
   const { id } = useParams();
 
-
-  const {data: product, isLoading, error} = useSingleProductQuery(id);
-  
+  const { data: product, isLoading, error } = useSingleProductQuery(id);
 
   return (
     <>
@@ -19,7 +17,7 @@ export default function ProductDetails() {
           <img src={product?.image} alt="" />
         </div>
         <div className="w-[50%] space-y-3">
-          <h1 className="text-3xl font-semibold">{product?.name}</h1>
+          <h1 className="text-3xl font-semibold">{product?.model}</h1>
           <p className="text-xl">Rating: {product?.rating}</p>
           <ul className="space-y-1 text-lg">
             {product?.keyFeature?.map((feature: string) => (
@@ -29,7 +27,7 @@ export default function ProductDetails() {
           <Button>Add to cart</Button>
         </div>
       </div>
-      <ProductReview />
+      <ProductReview id={id!} />
     </>
   );
 }
