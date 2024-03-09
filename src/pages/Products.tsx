@@ -1,13 +1,12 @@
-import React from 'react';
 import ProductCard from '@/components/ProductCard';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
 import { useToast } from '@/components/ui/use-toast';
-import { useGetProductsQuery } from '@/redux/api/apiSlice';
 import { setPriceRange, toggleState } from '@/redux/features/products/productSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hook';
 import { IProduct } from '@/types/globalTypes';
+import { useGetProductsQuery } from '@/redux/features/products/productApi';
 
 export default function Products() {
   const { data, isLoading, error } = useGetProductsQuery(undefined);

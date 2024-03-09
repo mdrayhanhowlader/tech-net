@@ -4,7 +4,6 @@ import { Button } from './ui/button';
 import { Textarea } from './ui/textarea';
 import { FiSend } from 'react-icons/fi';
 import { useGetCommentQuery, usePostCommentMutation } from '@/redux/features/products/productApi';
-// import { useGetCommentQuery, usePostCommentMutation } from '@/redux/api/apiSlice';
 
 
 interface IProps {
